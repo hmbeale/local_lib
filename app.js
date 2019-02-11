@@ -7,7 +7,15 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+//take out user and pass before commiting to git
 var app = express();
+//Set up mongoose connection
+var mongoose = require('mongoose');
+var mongoDB = 'mongodb://user:pass@ds331135.mlab.com:31135/local_library';
+mongoose.connect(mongoDB);
+mongoose.Promise = global.Promise;
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
