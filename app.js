@@ -12,7 +12,7 @@ var catalogRouter = require('./routes/catalog');  //Import routes for "catalog" 
 var app = express();
 //Set up mongoose connection
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://user:pass@ds331135.mlab.com:31135/local_library';
+var mongoDB = 'mongodb://hbeale:Hbmlab1@ds331135.mlab.com:31135/local_library';
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
